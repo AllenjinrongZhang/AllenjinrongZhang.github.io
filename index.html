@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link rel="shortcut icon" href="./icons/icon16.png">
+    <link rel="manifest" href="./manifest.json">
+
+    <title>Offline Dictionary</title>
+</head>
+
+<body>
+    <div class="container">
+        <!-- Content here -->
+        <h3>Offline Dictionary</h3>
+
+        <div class="input-group">
+            <input id="searchBox" type="text" class="form-control" placeholder="Enter any word..."
+                aria-label="Recipient's username with two button addons" aria-describedby="button-addon4">
+            <div class="input-group-prepend">
+                <button class="btn btn-outline-secondary" type="button" onclick="getData()">Search</button>
+            </div>
+        </div>
+
+        <span class="errorMsg"></span>
+
+        <div class="card text-center">
+            <div class="card-body">
+                <h4 class="card-title" id="title"></h4>
+                <p class="card-text" id="ipa"></p>
+                <p class="card-text" id="partOfSpeech"></p>
+
+            </div>
+
+        </div>
+
+        <div class="card">
+            <div class="card-body">
+                <ul id="list">
+                </ul>
+                <span class="noRes"></span>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Optional JavaScript -->
+
+    <script src="./js/app.js"></script>
+    <script src="./js/jquery-3.3.1.slim.min.js"></script>
+    <script src="./js/popper.min.js"></script>
+    <script src="./js/bootstrap.min.js"></script>
+</body>
+
+</html>
