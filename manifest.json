@@ -1,12 +1,12 @@
 {
-  "name": "WhatsTheWord",
-  "short_name": "WTW",
+  "name": "Offline Dictionary",
+  "short_name": "OLD",
   "theme_color": "#6f1e51",
   "background_color": "#6f1e51",
   "display": "standalone",
   "orientation": "portrait",
   "Scope": "/",
-  "start_url": "/WhatsTheWord/",
+  "start_url": "/",
   "icons": [
     {
       "src": "icons/icon-72x72.png",
