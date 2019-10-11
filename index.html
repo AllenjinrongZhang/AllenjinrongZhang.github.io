@@ -5,71 +5,59 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
+    <title>Offline Dictionary</title>
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="./bootstrap.min.css">
     <link rel="shortcut icon" href="./icons/o.png">
     <link rel="manifest" href="./manifest.json">
 
-    <title>Offline Dictionary</title>
+    <script src="libs/jquery.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="css/font-awesome.css">
 </head>
 
 <body>
-    <div class="container" style="
-    background-color: #3ca6b7;
-">
-        <!-- Content here -->
-        <h1 style="
-    text-shadow: 3px 3px black;
-    box-shadow: 6px 6px #212529a8;
-    margin: 30px;
-    color: #721c24;
-    text-align: center;
-    background-color: #2c727d;
-">Offline Dictionary</h1>
-
-        <div class="input-group">
-            <input id="searchBox" type="text" class="form-control" placeholder="Input any word...">
-            <div class="input-group-prepend">
-                <button class="btn btn-outline-secondary" type="button"
-                    onclick="getData(document.getElementById('searchBox').value)" style="
-    background-color: black;
-">Search</button>
-            </div>
-        </div>
-
-        <span class="errorMsg"></span>
-
-        <div class="card text-center">
-            <div class="card-body">
-                <h4 class="card-title" id="title" style="
-    box-shadow: 4px 4px #00000054;
-    color: #694141;
-    background-color: #eacfcf;
-"></h4>
-                <p class="card-text" id="ipa" style="
-    color: #bd2727;
-"></p>
-                <p class="card-text" id="partOfSpeech"></p>
-            </div>
-        </div>
-
-        <div class="card">
-            <div class="card-body">
-                <ul id="list" style="
-    color: #da9494;
-">
-                </ul>
-                <span class="noRes"></span>
-            </div>
-        </div>
-
+    <div id="appbar">
+        <span onclick="toggleDrawer();"><i class="fa fa-bars" style="width: 30px;"></i></span>
+        <span id="apptitle">Dictionary</span>
     </div>
+    <div id="main">
+            <div id="home" class="container" style="background-color: #3ca6b7;">
+                <!-- Content here -->
+                <h1 style="text-shadow: 3px 3px black;box-shadow: 6px 6px #212529a8;margin: 30px;color: #721c24;text-align: center;background-color: #2c727d;">Offline Dictionary</h1>
+                <div class="input-group">
+                    <input id="searchBox" type="text" class="form-control" placeholder="Input any word...">
+                    <div class="input-group-prepend">
+                        <button class="btn btn-outline-secondary" type="button"
+                            onclick="getData(document.getElementById('searchBox').value)" style="background-color: black;">Search</button>
+                    </div>
+                </div>
+                <span class="errorMsg"></span>
+                <div class="card text-center">
+                    <div class="card-body">
+                        <h4 class="card-title" id="title" style="box-shadow: 4px 4px #00000054;color: #694141;background-color: #eacfcf;"></h4>
+                        <p class="card-text" id="ipa" style="color: #bd2727;"></p>
+                        <p class="card-text" id="partOfSpeech"></p>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-body">
+                        <ul id="list" style="color: #da9494;">
+                        </ul>
+                        <span class="noRes"></span>
+                    </div>
+                </div>
+            </div>
 
+            <div id="history" class="container" style="background-color: #3ca6b7;">
+                历史记录
+            </div>
+    </div>
+    <div id="scrollbtm" onclick="scrollToBottom();"><i class="fa fa-arrow-down"></i></div>
+    <div id="drawer">
+            <div class="ditem" onclick="toggleDrawer(); showHome();"></i>Home</div>
+    </div>
     <!-- Optional JavaScript -->
     <script src="./app.js"></script>
-
-
-
 </body>
-
 </html>

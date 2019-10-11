@@ -1,0 +1,108 @@
+@font-face{
+	font-family: 'Roboto';
+	src: url('Roboto-Regular.ttf');
+}
+body{
+	font-family: 'Roboto', sans-serif;
+	padding: 0;
+	margin: 0;
+	color: #393939;
+	background-color: #ededed;
+}
+h1, h2, h3, h4, h5, p{
+	margin: 0;
+	margin-bottom: 15px;
+}
+div{
+	padding: 0;
+	margin: 0;
+}
+#appbar{
+	padding: 20px;
+	background-color: #36a446;
+	color: white;
+	user-select: none;
+}
+#drawer{
+	position: fixed;
+	background-color: #c6efcc;
+	color: #504b3c;
+	top: 64px;
+	left: 0;
+	bottom: 0;
+	width: 300px;
+	display: none;
+	padding-bottom: 50px;
+	overflow: auto;
+}
+#main{
+	background-color: #ededed;
+	height: 100px;
+	margin: 0;
+	padding: 15px;
+	overflow: auto;
+	padding-bottom: 50px;
+}
+#credits{
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	padding: 10px;
+	font-size: 12px;
+	width: 250px;
+	color: #87783c;
+}
+a{
+	color: inherit;
+}
+.ditem{
+	padding: 15px;
+	border-bottom: 1px solid #87783c;
+	transition: background-color .5s;
+}
+.ditem:hover{
+	background-color: white;
+}
+.letterlist{
+	display: inline-block;
+	padding: 10px;
+	margin: 3px;
+	border: 1px solid #36a446;
+	border-radius: 3px;
+	color: #36a446;
+	cursor: pointer;
+	transition: background-color, color .5s;
+}
+.letterlist:hover{
+	color: white;
+	background-color: #36a446;
+}
+.wlist{
+	background-color: white;
+	padding: 15px;
+	margin: 5px;
+	border-radius: 3px;
+}
+#qf{
+	box-sizing: border-box;
+	width: 100%;
+	padding: 20px;
+	border: none;
+	background-color: white;
+	border-radius: 3px;
+	margin-bottom: 10px;
+}
+#scrollbtm{
+	position: fixed;
+	right: 0;
+	bottom: 0;
+	padding: 10px;
+	margin: 20px;
+	width: 20px;
+	height: 20px;
+	text-align: center;
+	border-radius: 50%;
+	background-color: #36a446;
+	color: white;
+	display: none;
+}

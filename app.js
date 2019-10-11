@@ -56,15 +56,31 @@ async function getData(word)
 }
 
 
-window.addEventListener('load', async e => {
-    console.log(navigator.onLine);
-    if ('serviceWorker' in navigator) {
-        try {
-            navigator.serviceWorker.register('./sw.js');
-            console.log('SW registered');
-        } catch (error) {
-            console.log('SW failed');
+// window.addEventListener('load', async e => {
+//     console.log(navigator.onLine);
+//     if ('serviceWorker' in navigator) {
+//         try {
+//             navigator.serviceWorker.register('./sw.js');
+//             console.log('SW registered');
+//         } catch (error) {
+//             console.log('SW failed');
 
-        }
-    }
-});
+//         }
+//     }
+// });
+
+
+function toggleDrawer(){
+	$("#drawer").fadeToggle();
+}
+
+function hidenAll(){
+	$("#home").hide();
+}
+
+function showHome(){
+	hidenAll();
+	$("#home").show();
+}
+
+showHome();
