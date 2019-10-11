@@ -69,6 +69,10 @@ function saveHistory(historyList){
 	localStorage.setItem("history", JSON.stringify(historyList) );
 }
 
+function cleanHistoryAll(){
+	localStorage.removeItem("history");
+}
+
 function saveSearchValue(value){
 	//有搜索内容，保存到 localStorage中
 	var historyList = loadHistory();
@@ -123,6 +127,18 @@ function updateHistoryList(){
 	$history.html(itemList);
 }
 
+function initCleanHistory(){
+	$btnCleanHistory = $("#btnCleanAllHistory");
+	$btnCleanHistory.click(function(){
+		cleanHistoryAll();
+		updateHistoryList();
+	});
+}
+
+function init(){
+	initCleanHistory();
+	showHome();
+}
 
 function showHistory(){
 	hidenAll();
@@ -130,4 +146,4 @@ function showHistory(){
 	updateHistoryList();
 }
 
-showHome();
+init();

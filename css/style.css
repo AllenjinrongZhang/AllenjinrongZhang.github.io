@@ -111,6 +111,7 @@ a{
 	border:solid 1px #2c727d;
 	margin: 10px 10px;
 	padding: 20px;
+	background-color: white;
 }
 
 #historyList li{
