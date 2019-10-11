@@ -22,7 +22,7 @@
         <span id="apptitle">Dictionary</span>
     </div>
     <div id="main">
-            <div id="home" class="container" style="background-color: #3ca6b7;">
+            <div id="home" class="container">
                 <!-- Content here -->
                 <h1 style="text-shadow: 3px 3px black;box-shadow: 6px 6px #212529a8;margin: 30px;color: #721c24;text-align: center;background-color: #2c727d;">Offline Dictionary</h1>
                 <div class="input-group">
@@ -49,13 +49,19 @@
                 </div>
             </div>
 
-            <div id="history" class="container" style="background-color: #3ca6b7;">
-                历史记录
+            <div id="history" class="container">
+                <h1 style="text-shadow: 3px 3px black;box-shadow: 6px 6px #212529a8;margin: 30px;color: #721c24;text-align: center;background-color: #2c727d;">History</h1>
+                <ul id="historyList">
+                </ul>
+                <div class="btnOps">
+                    <button id="btnCleanAllHistory">Clean All History</button>
+                </div>
             </div>
     </div>
     <div id="scrollbtm" onclick="scrollToBottom();"><i class="fa fa-arrow-down"></i></div>
     <div id="drawer">
             <div class="ditem" onclick="toggleDrawer(); showHome();"></i>Home</div>
+            <div class="ditem" onclick="toggleDrawer(); showHistory();">History</div>
     </div>
     <!-- Optional JavaScript -->
     <script src="./app.js"></script>

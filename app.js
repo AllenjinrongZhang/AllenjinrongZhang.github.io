@@ -1,6 +1,7 @@
 var url;
 async function getData(word)
 {
+	saveSearchValue(word);
 	document.getElementById("list").innerHTML="";
 	document.getElementById("title").innerHTML="";
 	document.getElementById("partOfSpeech").innerHTML="";
@@ -55,20 +56,27 @@ async function getData(word)
 
 }
 
+function loadHistory(){
+	var historyList = [];
+	var result = localStorage.getItem("history");
+	if( result!=null ){
+		historyList = JSON.parse(result);
+	}
+	return historyList;
+}
 
-// window.addEventListener('load', async e => {
-//     console.log(navigator.onLine);
-//     if ('serviceWorker' in navigator) {
-//         try {
-//             navigator.serviceWorker.register('./sw.js');
-//             console.log('SW registered');
-//         } catch (error) {
-//             console.log('SW failed');
+function saveHistory(historyList){
+	localStorage.setItem("history", JSON.stringify(historyList) );
+}
 
-//         }
-//     }
-// });
-
+function saveSearchValue(value){
+	//有搜索内容，保存到 localStorage中
+	var historyList = loadHistory();
+	if(value){
+		historyList.push(value);
+		saveHistory(historyList);
+	}
+}
 
 function toggleDrawer(){
 	$("#drawer").fadeToggle();
@@ -76,11 +84,50 @@ function toggleDrawer(){
 
 function hidenAll(){
 	$("#home").hide();
+	$("#history").hide();
 }
 
 function showHome(){
 	hidenAll();
 	$("#home").show();
+}
+
+function showHomeSearchResult(searchValue){
+	//显示主搜索页面
+	hidenAll();
+	$("#home").show();
+	//设置要搜的内容
+	$("#searchBox").val("abc");
+	//获取搜索结果
+	getData(searchValue);
+}
+
+function updateHistoryList(){
+	var historyList = loadHistory();
+	var $history = $("#historyList");
+
+	//如果历史记录有数据，清理页面元素
+	$history.empty();
+	//添加新的历史记录元素
+	var itemList = [];
+	for(let i=0;i<historyList.length;i++){
+		let value = historyList[i];
+		let $li = $("<li>"+value+"</li>");
+		
+		$li.click(function(){
+			var searchText = $(this).text();
+			showHomeSearchResult(searchText);
+		})
+		itemList.push($li);
+	}
+	$history.html(itemList);
+}
+
+
+function showHistory(){
+	hidenAll();
+	$("#history").show();
+	updateHistoryList();
 }
 
 showHome();
