@@ -133,3 +133,7 @@ a{
 	color: white;
 	padding: 10px 30px;
 }
+
+#offlineResult{
+	padding:20px;
+}

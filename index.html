@@ -11,6 +11,7 @@
     <link rel="shortcut icon" href="./icons/o.png">
     <link rel="manifest" href="./manifest.json">
 
+    <script src="libs/offline-db.js"></script>
     <script src="libs/jquery.js"></script>
     <link rel="stylesheet" type="text/css" href="css/style.css">
     <link rel="stylesheet" type="text/css" href="css/font-awesome.css">
@@ -22,9 +23,10 @@
         <span id="apptitle">Dictionary</span>
     </div>
     <div id="main">
+            <!-- HOME Online Search -->
             <div id="home" class="container">
                 <!-- Content here -->
-                <h1 style="text-shadow: 3px 3px black;box-shadow: 6px 6px #212529a8;margin: 30px;color: #721c24;text-align: center;background-color: #2c727d;">Offline Dictionary</h1>
+                <h1 style="text-shadow: 3px 3px black;box-shadow: 6px 6px #212529a8;margin: 30px;color: #721c24;text-align: center;background-color: #2c727d;">Online Dictionary</h1>
                 <div class="input-group">
                     <input id="searchBox" type="text" class="form-control" placeholder="Input any word...">
                     <div class="input-group-prepend">
@@ -48,7 +50,7 @@
                     </div>
                 </div>
             </div>
-
+            <!-- History -->
             <div id="history" class="container">
                 <h1 style="text-shadow: 3px 3px black;box-shadow: 6px 6px #212529a8;margin: 30px;color: #721c24;text-align: center;background-color: #2c727d;">History</h1>
                 <ul id="historyList">
@@ -57,13 +59,27 @@
                     <button id="btnCleanAllHistory">Clean All History</button>
                 </div>
             </div>
+            <!-- Offline English Dict -->
+            <div id="offlineEnglishDict" class="container">
+                    <h1 style="text-shadow: 3px 3px black;box-shadow: 6px 6px #212529a8;margin: 30px;color: #721c24;text-align: center;background-color: #2c727d;">Full Offline Dictionary</h1>
+                    <div class="input-group">
+                        <input id="offlineSearchBox" type="text" class="form-control" placeholder="Input any word...">
+                        <div class="input-group-prepend">
+                            <button class="btn btn-outline-secondary" type="button" id="btnOfflineSearch" style="background-color: black;">Search</button>
+                        </div>
+                    </div>
+                    <div id="offlineResult">
+
+                    </div>
+            </div>
     </div>
     <div id="scrollbtm" onclick="scrollToBottom();"><i class="fa fa-arrow-down"></i></div>
     <div id="drawer">
             <div class="ditem" onclick="toggleDrawer(); showHome();"></i>Home</div>
             <div class="ditem" onclick="toggleDrawer(); showHistory();">History</div>
+            <div class="ditem" onclick="toggleDrawer(); showOfflineEnglish();">Offline English Dict</div>
     </div>
     <!-- Optional JavaScript -->
     <script src="./app.js"></script>
 </body>
-</html>
+</html> 

@@ -89,11 +89,41 @@ function toggleDrawer(){
 function hidenAll(){
 	$("#home").hide();
 	$("#history").hide();
+	$("#offlineEnglishDict").hide();
 }
 
 function showHome(){
 	hidenAll();
 	$("#home").show();
+}
+
+function showOfflineEnglish(){
+	hidenAll();
+	$("#offlineEnglishDict").show();
+}
+
+function searchOfflineEnglish( searchValue ){
+	if( !searchValue ){
+		alert("Please input search value!");
+		return;
+	}
+	//查看offline-db中是否有对应词条
+	var result = offlineEnglishDB[searchValue];
+	var $offlineResult = $("#offlineResult");
+	if(result){
+		//格式化显示
+		$offlineResult.html(result);
+	}else{
+		$offlineResult.html("has no result！");
+	}
+}
+
+
+function initOfflineEnglish(){
+	$("#btnOfflineSearch").click(function(){
+		var searchValue = $("#offlineSearchBox").val();
+		searchOfflineEnglish(searchValue);
+	});
 }
 
 function showHomeSearchResult(searchValue){
@@ -137,6 +167,7 @@ function initCleanHistory(){
 
 function init(){
 	initCleanHistory();
+	initOfflineEnglish();
 	showHome();
 }
 
