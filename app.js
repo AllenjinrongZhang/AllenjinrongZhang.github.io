@@ -146,7 +146,7 @@ function updateHistoryList(){
 	for(let i=0;i<historyList.length;i++){
 		let value = historyList[i];
 		let $li = $("<li>"+value+"</li>");
-		
+		// add some functional 
 		$li.click(function(){
 			var searchText = $(this).text();
 			showHomeSearchResult(searchText);
