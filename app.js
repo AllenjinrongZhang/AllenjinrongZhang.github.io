@@ -102,6 +102,13 @@ function showOfflineEnglish(){
 	$("#offlineEnglishDict").show();
 }
 
+function createVoiceUI($root,vociceInfo){
+	if(vociceInfo){
+		$voiceEn = $("<span class='voicePanel'>En:"+vociceInfo.voc+"<span class='voice-btn'></span></span>");
+		$root.append( $voiceEn );
+	}
+}
+
 function searchOfflineEnglish( searchValue ){
 	if( !searchValue ){
 		alert("Please input search value!");
