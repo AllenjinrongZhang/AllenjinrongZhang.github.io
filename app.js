@@ -105,6 +105,10 @@ function showOfflineEnglish(){
 function createVoiceUI($root,vociceInfo){
 	if(vociceInfo){
 		$voiceEn = $("<span class='voicePanel'>En:"+vociceInfo.voc+"<span class='voice-btn'></span></span>");
+		$voiceEn.click(function(){
+			let audio = new Audio();
+			audio.src=vociceInfo.audio;
+			audio.play();
 		});
 		$root.append( $voiceEn );
 	}
