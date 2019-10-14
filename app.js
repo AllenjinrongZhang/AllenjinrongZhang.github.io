@@ -123,8 +123,13 @@ function searchOfflineEnglish( searchValue ){
 	var result = offlineEnglishDB[searchValue];
 	var $offlineResult = $("#offlineResult");
 	if(result){
-		//formatted display
-		$offlineResult.html(result);
+		//the new formatted display
+		$offlineResult.empty();
+
+		createVoiceUI($offlineResult,result.en);
+		createVoiceUI($offlineResult,result.us);
+
+		$offlineResult.append( $("<div>"+result.desc+"</div>") );
 	}else{
 		$offlineResult.html("has no result！");
 	}
