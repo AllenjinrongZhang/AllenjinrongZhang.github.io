@@ -74,7 +74,7 @@ function cleanHistoryAll(){
 }
 
 function saveSearchValue(value){
-	//有搜索内容，保存到 localStorage中
+	//some contents have been saved in LocalStorage
 	var historyList = loadHistory();
 	if(value){
 		historyList.push(value);
@@ -107,11 +107,11 @@ function searchOfflineEnglish( searchValue ){
 		alert("Please input search value!");
 		return;
 	}
-	//查看offline-db中是否有对应词条
+	//look at if there are some vocas exisiting in offline-db or not
 	var result = offlineEnglishDB[searchValue];
 	var $offlineResult = $("#offlineResult");
 	if(result){
-		//格式化显示
+		//formatted display
 		$offlineResult.html(result);
 	}else{
 		$offlineResult.html("has no result！");
@@ -127,22 +127,21 @@ function initOfflineEnglish(){
 }
 
 function showHomeSearchResult(searchValue){
-	//显示主搜索页面
+	//display the main searching page
 	hidenAll();
 	$("#home").show();
-	//设置要搜的内容
+	//setting the contents needed to be searched
 	$("#searchBox").val("abc");
-	//获取搜索结果
+	//acquire the research results
 	getData(searchValue);
 }
 
 function updateHistoryList(){
 	var historyList = loadHistory();
 	var $history = $("#historyList");
-
-	//如果历史记录有数据，清理页面元素
+	//if there are database have been recorded in historical record, some elements can be deleted
 	$history.empty();
-	//添加新的历史记录元素
+	//add some new record
 	var itemList = [];
 	for(let i=0;i<historyList.length;i++){
 		let value = historyList[i];
