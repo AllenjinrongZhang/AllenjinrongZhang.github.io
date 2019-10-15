@@ -21,4 +21,12 @@ const offlineEnglishDB = {
         },
         "desc":"n. 计算机；电脑；电子计算机"
     },
+    "preschool":{
+        en:{
+            "voc":"[/ˈpriːskuːl/]",
+            "audio":"",
+        },
+        "desc":"n. 幼儿园，育幼院"
+    
+    }
 };
