@@ -23,7 +23,7 @@ async function getData(word)
 	 	if(typeof(jsonobj[0])=="string")
 	 	{
 	 		var sugg = jsonobj[0];
-			for (var i = 1; i < jsonobj.length ; i++) 
+			for (var i = 1; i < jsonobj.length ; i++)
 			{
 			 	sugg = sugg + ', '+jsonobj[i];
 			}
@@ -41,7 +41,7 @@ async function getData(word)
 		 	var defs= [];
 		 	defs=jsonobj[0].shortdef;
 	 		var output="";
-		 	for (var i = 0; i < defs.length; i++) 
+		 	for (var i = 0; i < defs.length; i++)
 			{
 		  		output = output + '<li>'+defs[i]+'</li>';
 			}
@@ -49,7 +49,7 @@ async function getData(word)
 			document.getElementById("list").innerHTML=output;
 			document.getElementById("ipa").innerHTML=ipa;
 	 	}
-	 	
+
 	    document.getElementById("title").innerHTML=word;
 		document.getElementById("searchBox").value='';
 	}
@@ -90,6 +90,7 @@ function hidenAll(){
 	$("#home").hide();
 	$("#history").hide();
 	$("#offlineEnglishDict").hide();
+	$("#offlineChineseDict").hide();
 }
 
 function showHome(){
@@ -101,6 +102,15 @@ function showOfflineEnglish(){
 	hidenAll();
 	$("#offlineEnglishDict").show();
 }
+
+
+function showOfflineChinese(){
+	hidenAll();
+	$("#offlineChineseDict").show();
+}
+
+
+
 
 function createVoiceUI($root,vociceInfo){
 	if(vociceInfo){
@@ -136,26 +146,38 @@ function searchOfflineEnglish( searchValue ){
 }
 
 
+
+
+
+
 function initOfflineEnglish(){
 	$("#btnOfflineSearch").click(function(){
 		var searchValue = $("#offlineSearchBox").val();
 		searchOfflineEnglish(searchValue);
 	});
 }
+function initOfflineChinese(){
+	$("#btnOfflineChineseSearch").click(function(){
+		var searchValue = $("#offlineSearchChineseBox").val();
+		searchOfflineChinese(searchValue);
+	});
+}
+
 
 function showHomeSearchResult(searchValue){
-	//display the main searching page
+	//display main searching page
 	hidenAll();
 	$("#home").show();
-	//setting the contents needed to be searched
+	// set the contents needed to be searching
 	$("#searchBox").val("abc");
-	//acquire the research results
+	// get some results from searching
 	getData(searchValue);
 }
 
 function updateHistoryList(){
 	var historyList = loadHistory();
 	var $history = $("#historyList");
+
 	//if there are database have been recorded in historical record, some elements can be deleted
 	$history.empty();
 	//add some new record
@@ -163,7 +185,7 @@ function updateHistoryList(){
 	for(let i=0;i<historyList.length;i++){
 		let value = historyList[i];
 		let $li = $("<li>"+value+"</li>");
-		// add some functional 
+
 		$li.click(function(){
 			var searchText = $(this).text();
 			showHomeSearchResult(searchText);
@@ -184,6 +206,7 @@ function initCleanHistory(){
 function init(){
 	initCleanHistory();
 	initOfflineEnglish();
+	initOfflineChinese();
 	showHome();
 }
 
