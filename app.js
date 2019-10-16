@@ -147,7 +147,26 @@ function searchOfflineEnglish( searchValue ){
 
 
 
+function searchOfflineChinese( searchValue ){
+	if( !searchValue ){
+		alert("Please input search value!");
+		return;
+	}
+	//look at if there are some vocas exisiting in offline-db or not
+	var result = offlineChineseDB[searchValue];
+	var $offlineResult = $("#offlineChineseResult");
+	if(result){
+		//the new formatted display
+		$offlineResult.empty();
 
+		$offlineResult.append( $("<div>"+result.word+"</div>") );
+		createVoiceUI($offlineResult,result.en);
+		createVoiceUI($offlineResult,result.us);
+		$offlineResult.append( $("<div>"+result.desc+"</div>") );
+	}else{
+		$offlineResult.html("has no result！");
+	}
+}
 
 
 function initOfflineEnglish(){
