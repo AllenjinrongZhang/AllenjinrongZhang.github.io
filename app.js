@@ -102,6 +102,11 @@ function showOfflineEnglish(){
 	$("#offlineEnglishDict").show();
 }
 
+function showOfflineChinese(){
+	hidenAll();
+	$("#offlineChineseDict").show();
+}
+
 function createVoiceUI($root,vociceInfo){
 	if(vociceInfo){
 		$voiceEn = $("<span class='voicePanel'>En:"+vociceInfo.voc+"<span class='voice-btn'></span></span>");
