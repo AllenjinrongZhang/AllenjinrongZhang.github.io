@@ -148,6 +148,13 @@ function initOfflineEnglish(){
 	});
 }
 
+function initOfflineChinese(){
+	$("#btnOfflineChineseSearch").click(function(){
+		var searchValue = $("#offlineSearchChineseBox").val();
+		searchOfflineChinese(searchValue);
+	});
+}
+
 function showHomeSearchResult(searchValue){
 	//display the main searching page
 	hidenAll();
