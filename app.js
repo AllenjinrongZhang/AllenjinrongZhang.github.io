@@ -103,21 +103,15 @@ function showOfflineEnglish(){
 	$("#offlineEnglishDict").show();
 }
 
-<<<<<<< HEAD
 
-=======
->>>>>>> AddTranslateChinese
 function showOfflineChinese(){
 	hidenAll();
 	$("#offlineChineseDict").show();
 }
 
-<<<<<<< HEAD
 
 
 
-=======
->>>>>>> AddTranslateChinese
 function createVoiceUI($root,vociceInfo){
 	if(vociceInfo){
 		$voiceEn = $("<span class='voicePanel'>En:"+vociceInfo.voc+"<span class='voice-btn'></span></span>");
@@ -189,20 +183,13 @@ function initOfflineChinese(){
 }
 
 
-function initOfflineChinese(){
-	$("#btnOfflineChineseSearch").click(function(){
-		var searchValue = $("#offlineSearchChineseBox").val();
-		searchOfflineChinese(searchValue);
-	});
-}
-
 function showHomeSearchResult(searchValue){
-	//display main searching page
+	//display the main searching page
 	hidenAll();
 	$("#home").show();
-	// set the contents needed to be searching
+	//setting the contents needed to be searched
 	$("#searchBox").val("abc");
-	// get some results from searching
+	//acquire the research results
 	getData(searchValue);
 }
 
