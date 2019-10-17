@@ -103,15 +103,21 @@ function showOfflineEnglish(){
 	$("#offlineEnglishDict").show();
 }
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> AddTranslateChinese
 function showOfflineChinese(){
 	hidenAll();
 	$("#offlineChineseDict").show();
 }
 
+<<<<<<< HEAD
 
 
 
+=======
+>>>>>>> AddTranslateChinese
 function createVoiceUI($root,vociceInfo){
 	if(vociceInfo){
 		$voiceEn = $("<span class='voicePanel'>En:"+vociceInfo.voc+"<span class='voice-btn'></span></span>");
@@ -182,6 +188,13 @@ function initOfflineChinese(){
 	});
 }
 
+
+function initOfflineChinese(){
+	$("#btnOfflineChineseSearch").click(function(){
+		var searchValue = $("#offlineSearchChineseBox").val();
+		searchOfflineChinese(searchValue);
+	});
+}
 
 function showHomeSearchResult(searchValue){
 	//display main searching page

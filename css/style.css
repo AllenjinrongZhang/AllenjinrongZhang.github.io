@@ -137,3 +137,16 @@ a{
 #offlineResult{
 	padding:20px;
 }
+
+.voicePanel{
+	margin-right: 10px;
+}
+
+.voice-btn{
+	background-image: url("../icons/voice.png");
+    background-size: contain;
+	width:28px;
+	height:28px;
+	display: inline-block;
+	line-height: 28px;
+}
